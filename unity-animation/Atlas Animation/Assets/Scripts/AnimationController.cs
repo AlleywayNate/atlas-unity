@@ -15,32 +15,58 @@ public class AnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void Move()
+    // Method to set the running animation
+    public void SetRunning(bool isRunning)
     {
-        animator.SetBool("isRunning", true);
-        animator.SetBool("isIdle", false);
+        animator.SetBool("isRunning", isRunning);
     }
 
-    public void Idle()
+    // Method to set the idle animation
+    public void SetIdle(bool isIdle)
     {
-        animator.SetBool("isRunning", false);
-        animator.SetBool("isIdle", true);
+        animator.SetBool("isIdle", isIdle);
     }
 
+    // Method to trigger the jump animation
     public void Jump()
     {
         animator.SetTrigger("isJumping");
     }
 
-    public void IsFalling()
+    // Method to set the falling state
+    public void SetFalling(bool isFalling)
+    {
+        animator.SetBool("isFalling", isFalling);
+    }
+
+    // Method to set the grounded state
+    public void SetGrounded(bool isGrounded)
+    {
+        animator.SetBool("isGrounded", isGrounded);
+    }
+
+    // Method to indicate the player is airborne
+    public void IsAirborne()
     {
         isAirborne = true;
         animator.SetTrigger("isFalling");
     }
 
+    // Method to indicate the player is grounded
     public void IsGrounded()
     {
         isAirborne = false;
         animator.ResetTrigger("isFalling");
+    }
+
+
+    public void SetMoving(bool isMoving)
+    {
+        animator.SetBool("isMoving", isMoving);
+    }
+
+    public void LandImpact()
+    {
+        animator.SetTrigger("haslanded");
     }
 }
