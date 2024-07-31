@@ -9,64 +9,171 @@ public class AnimationController : MonoBehaviour
 
     public bool isAirborne;
 
-    // Start is called before the first frame update
+    private bool isRunningLogged = false;
+    private bool isIdleLogged = false;
+    private bool isJumpingLogged = false;
+    private bool isFallingLogged = false;
+    private bool isGroundedLogged = false;
+    private bool isMovingLogged = false;
+
+    private Dictionary<string, bool> wasPlaying = new Dictionary<string, bool>();
+    private Dictionary<string, bool> wasFinished = new Dictionary<string, bool>();
+
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    // Method to set the running animation
-    public void SetRunning(bool isRunning)
+    public void Move()
     {
-        animator.SetBool("isRunning", isRunning);
+        if (!isRunningLogged)
+        {
+            Debug.Log("Move animation triggered.");
+            isRunningLogged = true;
+            isIdleLogged = false;
+        }
+        animator.SetBool("isRunning", true);
+        animator.SetBool("isIdle", false);
     }
 
-    // Method to set the idle animation
-    public void SetIdle(bool isIdle)
+    public void Idle()
     {
-        animator.SetBool("isIdle", isIdle);
+        if (!isIdleLogged)
+        {
+            Debug.Log("Idle animation triggered.");
+            isIdleLogged = true;
+            isRunningLogged = false;
+        }
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isIdle", true);
     }
 
-    // Method to trigger the jump animation
     public void Jump()
     {
+        if (!isJumpingLogged)
+        {
+            Debug.Log("Jump animation triggered.");
+            isJumpingLogged = true;
+        }
         animator.SetTrigger("isJumping");
     }
 
-    // Method to set the falling state
-    public void SetFalling(bool isFalling)
+    public void IsFalling()
     {
-        animator.SetBool("isFalling", isFalling);
-    }
-
-    // Method to set the grounded state
-    public void SetGrounded(bool isGrounded)
-    {
-        animator.SetBool("isGrounded", isGrounded);
-    }
-
-    // Method to indicate the player is airborne
-    public void IsAirborne()
-    {
+        if (!isFallingLogged)
+        {
+            Debug.Log("Falling animation triggered.");
+            isFallingLogged = true;
+            isJumpingLogged = false;
+        }
         isAirborne = true;
         animator.SetTrigger("isFalling");
     }
 
-    // Method to indicate the player is grounded
     public void IsGrounded()
     {
+        if (!isGroundedLogged)
+        {
+            Debug.Log("Grounded state set.");
+            isGroundedLogged = true;
+            isFallingLogged = false;
+        }
         isAirborne = false;
         animator.ResetTrigger("isFalling");
     }
 
+    public void LandImpact()
+    {
+        Debug.Log("Land impact animation triggered.");
+        animator.SetTrigger("landImpact");
+    }
+
+    public void SetGrounded(bool isGrounded)
+    {
+        if (isGrounded != isGroundedLogged)
+        {
+            Debug.Log("Grounded state set to: " + isGrounded);
+            isGroundedLogged = isGrounded;
+        }
+        animator.SetBool("isGrounded", isGrounded);
+    }
+
+    public void SetFalling(bool isFalling)
+    {
+        if (isFalling != isFallingLogged)
+        {
+            Debug.Log("Falling state set to: " + isFalling);
+            isFallingLogged = isFalling;
+        }
+        animator.SetBool("isFalling", isFalling);
+        // Explicitly handle transitions when the falling state changes
+        if (isFalling)
+        {
+            animator.SetTrigger("isFalling");
+        }
+    }
 
     public void SetMoving(bool isMoving)
     {
+        if (isMoving != isMovingLogged)
+        {
+            Debug.Log("Moving state set to: " + isMoving);
+            isMovingLogged = isMoving;
+        }
         animator.SetBool("isMoving", isMoving);
     }
 
-    public void LandImpact()
+    public bool IsAnimationPlaying(string animationName)
     {
-        animator.SetTrigger("haslanded");
+        if (animator != null)
+        {
+            if (!wasPlaying.ContainsKey(animationName))
+            {
+                wasPlaying[animationName] = false;
+            }
+
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            bool isPlaying = stateInfo.IsName(animationName);
+
+            if (isPlaying != wasPlaying[animationName])
+            {
+                Debug.Log(animationName + " animation playing: " + isPlaying);
+                wasPlaying[animationName] = isPlaying;
+            }
+
+            return isPlaying;
+        }
+        else
+        {
+            Debug.LogError("Animator component is not initialized.");
+            return false;
+        }
+    }
+
+    public bool IsAnimationFinished(string animationName)
+    {
+        if (animator != null)
+        {
+            if (!wasFinished.ContainsKey(animationName))
+            {
+                wasFinished[animationName] = false;
+            }
+
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            bool isFinished = stateInfo.IsName(animationName) && stateInfo.normalizedTime >= 1f;
+
+            if (isFinished != wasFinished[animationName])
+            {
+                Debug.Log(animationName + " animation finished: " + isFinished);
+                wasFinished[animationName] = isFinished;
+            }
+
+            return isFinished;
+        }
+        else
+        {
+            Debug.LogError("Animator component is not initialized.");
+            return false;
+        }
     }
 }
