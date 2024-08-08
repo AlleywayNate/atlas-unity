@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Atlas unity audio.sln"
+    "dotnet.defaultSolution": "Atlas unity audio.sln",
+    "FSharp.suggestGitignore": false
 }
