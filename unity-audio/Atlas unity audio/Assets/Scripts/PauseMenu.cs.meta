@@ -3,7 +3,9 @@ guid: 0e607585efc7cfb4e8b76fc4f0aef4ff
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - PauseCanvas: {fileID: 8608471409070956380, guid: 01886c5d99dd34244881b9e4ab5718b6, type: 3}
+  - AudioMixer: {fileID: 24100000, guid: 2fe09c1325c8ff640b3afa0efee1787a, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

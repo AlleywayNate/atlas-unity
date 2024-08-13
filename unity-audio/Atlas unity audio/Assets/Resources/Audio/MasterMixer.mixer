@@ -75,6 +75,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &-6009168808090561843
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MuffledSnapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 60b74027f7767084d88dae601fcc3e62
+  m_FloatValues:
+    4b0b9e80b7ca27048a909a92801f6172: 20
+    183abd8564fc93543ab3143c84e9560b: -4.5603476
+    3df81037fb43d414c905c16c95d4dc64: 20
+  m_TransitionOverrides: {}
 --- !u!243 &-3906370572436842790
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -141,6 +155,8 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: 976536940900131317}
+  - {fileID: -6009168808090561843}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -154,7 +170,7 @@ AudioMixerController:
     - 64cf996350e9fa84c9733e421cb57177
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: -6009168808090561843}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -201,7 +217,23 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: af627081ff62ada49905f478bf910aa0
   m_FloatValues:
-    3df81037fb43d414c905c16c95d4dc64: 1.7477665
+    4b0b9e80b7ca27048a909a92801f6172: 20
+    183abd8564fc93543ab3143c84e9560b: -4.5603476
+    3df81037fb43d414c905c16c95d4dc64: 20
+  m_TransitionOverrides: {}
+--- !u!245 &976536940900131317
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NormalSnapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 43da950b49157e24c89b0bab3d6fbdec
+  m_FloatValues:
+    4b0b9e80b7ca27048a909a92801f6172: 20
+    183abd8564fc93543ab3143c84e9560b: -4.5603476
+    3df81037fb43d414c905c16c95d4dc64: 20
   m_TransitionOverrides: {}
 --- !u!244 &2591714764379027811
 AudioMixerEffectController:
