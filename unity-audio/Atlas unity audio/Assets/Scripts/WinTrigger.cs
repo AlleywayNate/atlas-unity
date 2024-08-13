@@ -10,6 +10,7 @@ public class WinTrigger : MonoBehaviour
     public Text timerText;
     public GameObject WinCanvas;
     public CharacterController controller;
+    public BGMController bgmController; // Reference to the BGMController
 
     void OnTriggerEnter(Collider other)
     {
@@ -20,6 +21,11 @@ public class WinTrigger : MonoBehaviour
             timerText.color = Color.green;
             timerText.fontSize = 60;
             WinCanvas.SetActive(true);
+            
+            if (bgmController != null)
+            {
+                bgmController.StopBGM(); // Stop the background music
+            }
         }
     }
 }
