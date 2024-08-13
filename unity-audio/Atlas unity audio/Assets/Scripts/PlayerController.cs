@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour
     private bool isFalling = false;
     private float fallDelay = 0.2f;
     private Coroutine fallDelayCoroutine;
+    public bool IsRunning()
+    {
+        // Assuming you have logic that checks for player movement
+        return Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0;
+    }
 
     void Awake()
     {

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: d78badfefef88e14d9af98752c16b937
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - grassFootsteps: {fileID: 8300000, guid: 5434b0b6dcaa060448a9924fc07fed77, type: 3}
+  - rockFootsteps: {fileID: 8300000, guid: d5876be0dc8467543bf5f7b93cc25c34, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

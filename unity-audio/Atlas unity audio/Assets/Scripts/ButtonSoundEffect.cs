@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonSoundEffect : MonoBehaviour, IPointerEnterHandler
+public class ButtonSoundEffect : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
-    public AudioClip hoverSound;  // Assign your hover sound clip in the Inspector
+    private AudioClip hoverSound;  // Assign your hover sound clip in the Inspector
+    private AudioClip clickSound;  // Assign your click sound clip in the Inspector
     private AudioSource audioSource;
 
     void Start()
@@ -13,7 +14,22 @@ public class ButtonSoundEffect : MonoBehaviour, IPointerEnterHandler
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource component missing on this GameObject.");
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        // Optional: Automatically load clips if not assigned in Inspector
+        if (hoverSound == null)
+        {
+            hoverSound = Resources.Load<AudioClip>("Audio/SFX/UI/button-rollover");
+        }
+        if (clickSound == null)
+        {
+            clickSound = Resources.Load<AudioClip>("Audio/SFX/UI/button-click");
+        }
+
+        if (hoverSound == null || clickSound == null)
+        {
+            Debug.LogError("AudioClip(s) missing or not found.");
         }
     }
 
@@ -22,6 +38,14 @@ public class ButtonSoundEffect : MonoBehaviour, IPointerEnterHandler
         if (audioSource != null && hoverSound != null)
         {
             audioSource.PlayOneShot(hoverSound);
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (audioSource != null && clickSound != null)
+        {
+            audioSource.PlayOneShot(clickSound);
         }
     }
 }
