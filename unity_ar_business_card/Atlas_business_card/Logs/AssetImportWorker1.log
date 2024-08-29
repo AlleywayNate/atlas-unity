@@ -403,3 +403,32 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2801.327612 seconds.
+  path: Assets/UI Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss
+  artifactKey: Guid(f990376d0e994f2479ba1d064d16d473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss using Guid(f990376d0e994f2479ba1d064d16d473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3a5877dd1187f9982d213a332b8df00') in 1.679680 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 592.282356 seconds.
+  path: Assets/Images/ffa666d97ab0c121ebb1 1.png
+  artifactKey: Guid(c621e3cbde41278419f321b45d0c3852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/ffa666d97ab0c121ebb1 1.png using Guid(c621e3cbde41278419f321b45d0c3852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b69903fb7a0eecbf361609e56ae250ca') in 0.102021 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.151207 seconds.
+  path: Assets/Images/R (1).png
+  artifactKey: Guid(28df41a8424a74c4a80cfdc3b0b9ab09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/R (1).png using Guid(28df41a8424a74c4a80cfdc3b0b9ab09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dd8cff1a38604d0dc2681947731b159') in 0.109967 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
