@@ -107,3 +107,5 @@ Icon?
 ehthumbs.db
 Thumbs.db
 unity_ar_business_card/Atlas_business_card/Packages/com.ptc.vuforia.engine-10.25.4.tgz
+*.log
+*.log
