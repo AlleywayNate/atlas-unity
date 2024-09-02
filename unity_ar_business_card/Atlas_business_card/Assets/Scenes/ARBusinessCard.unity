@@ -1536,7 +1536,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8758196288370144751}
   m_Father: {fileID: 88668821577679727}
@@ -1822,7 +1822,7 @@ GameObject:
   - component: {fileID: 4385744703910386733}
   - component: {fileID: 8921251961267396776}
   m_Layer: 5
-  m_Name: Button
+  m_Name: GitHub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1972,7 +1972,7 @@ GameObject:
   - component: {fileID: 353830312028064515}
   - component: {fileID: 922147304579691501}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Twitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2137,7 +2137,7 @@ GameObject:
   - component: {fileID: 4201571853426671335}
   - component: {fileID: 5186537132687382879}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Linkedin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2155,13 +2155,35 @@ GameObject:
   - component: {fileID: 4256290865235408931}
   - component: {fileID: 4183703437822405728}
   - component: {fileID: 904386707820068943}
+  - component: {fileID: 7658665998721434068}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Email
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &7658665998721434068
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7658665998721434067}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18da46feaf3fe954991a7a2ab0e53860, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &7977005507756673814
 RectTransform:
   m_ObjectHideFlags: 0
