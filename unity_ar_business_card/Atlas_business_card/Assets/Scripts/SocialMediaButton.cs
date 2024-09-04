@@ -54,13 +54,13 @@ public class SocialMediaButton : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public void OpenLinkedin()
     {
         Debug.Log("Opening LinkedIn...");
-        Application.OpenURL("https://www.linkedin.com/in/brandon-montezuma-5b4552323");
+        Application.OpenURL("https://www.linkedin.com/in/nathenwilliams/");
     }
 
-    public void OpenTwitter()
+    public void OpenGithub()
     {
-        Debug.Log("Opening Twitter...");
-        Application.OpenURL("");
+        Debug.Log("Opening Github...");
+        Application.OpenURL("https://github.com/AlleywayNate");
     }
 
     public void OpenArtstation()

@@ -1244,7 +1244,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 353830312028064515}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6525756745436151882}
+        m_TargetAssemblyTypeName: SocialMediaButton, Assembly-CSharp
+        m_MethodName: OpenArtstation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1018403807419604469
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1802,7 +1814,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4201571853426671335}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7537677103181383307}
+        m_TargetAssemblyTypeName: SocialMediaButton, Assembly-CSharp
+        m_MethodName: OpenLinkedin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5310355994454441029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,8 +1857,9 @@ GameObject:
   - component: {fileID: 3566237685304827374}
   - component: {fileID: 4385744703910386733}
   - component: {fileID: 8921251961267396776}
+  - component: {fileID: 8921251961267396777}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Github
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1983,13 +2008,32 @@ GameObject:
   - component: {fileID: 3490426426225035822}
   - component: {fileID: 353830312028064515}
   - component: {fileID: 922147304579691501}
+  - component: {fileID: 6525756745436151882}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Artstation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6525756745436151882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525756745436151881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae390cb53b2beff42ba46504d65215ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 922147304579691501}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pressedColor: {r: 0, g: 1, b: 0, a: 1}
+  clickSound: {fileID: 0}
+  hoverSound: {fileID: 0}
 --- !u!1 &6951719656701621153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,13 +2192,32 @@ GameObject:
   - component: {fileID: 1507396105517563634}
   - component: {fileID: 4201571853426671335}
   - component: {fileID: 5186537132687382879}
+  - component: {fileID: 7537677103181383307}
   m_Layer: 5
-  m_Name: Button
+  m_Name: LinkedIn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7537677103181383307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7537677103181383306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae390cb53b2beff42ba46504d65215ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 5186537132687382879}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pressedColor: {r: 0, g: 1, b: 0, a: 1}
+  clickSound: {fileID: 0}
+  hoverSound: {fileID: 0}
 --- !u!1 &7658665998721434067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,7 +2489,37 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4385744703910386733}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8921251961267396777}
+        m_TargetAssemblyTypeName: SocialMediaButton, Assembly-CSharp
+        m_MethodName: OpenGithub
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8921251961267396777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5795752182004907582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae390cb53b2beff42ba46504d65215ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 8921251961267396776}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pressedColor: {r: 0, g: 1, b: 0, a: 1}
+  clickSound: {fileID: 0}
+  hoverSound: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
