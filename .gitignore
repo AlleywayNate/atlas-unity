@@ -109,3 +109,4 @@ Thumbs.db
 unity_ar_business_card/Atlas_business_card/Packages/com.ptc.vuforia.engine-10.25.4.tgz
 *.log
 unity_ar_business_card/Atlas_business_card/Assets/Editor/Migration/com.ptc.vuforia.engine-10.25.4.tgz
+unity_ar_business_card/Atlas_business_card/Builds/iOS/Libraries/libiPhone-lib.a
