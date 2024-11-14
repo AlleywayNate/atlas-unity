@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26adf3c8b748c3842a492f07d6d8bdc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPrefab: {fileID: 3829292259584235273, guid: 63741a0c0e7628c4b8b7b7aec207d81b, type: 3}
+  targetPrefab: {fileID: 7575994599525881521, guid: 12fb84ae1a9a20b47a832a6bdf2571c9, type: 3}
   targetsNum: 5
   ammo: 7
   planeSearchingCanvas: {fileID: 633987594}
@@ -567,11 +567,8 @@ MonoBehaviour:
   ammoImagePrefab: {fileID: 510523196576031843, guid: 9df9bfcd633690b42b692f3c2c7dee0c, type: 3}
   ammoImageGrid: {fileID: 1044931047}
   playAgainButton: {fileID: 2106013153}
-  leaderBoardButton: {fileID: 214662565}
-  leaderBoardUI: {fileID: 1449503016}
   EndingSound: {fileID: 971311118}
   planeSelectedSound: {fileID: 1263259000}
-  leaderBoard: {fileID: 1449503018}
   PlaneOcclusionMaterial: {fileID: 2100000, guid: fa853e1a751ea1c4b944b74ce2e463aa, type: 2}
 --- !u!4 &223974228
 Transform:
@@ -2619,8 +2616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6029d81838b71940b85ca6b657aa3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leadersList: {fileID: 532147677}
-  leadersLength: 3
 --- !u!114 &1449503019
 MonoBehaviour:
   m_ObjectHideFlags: 0

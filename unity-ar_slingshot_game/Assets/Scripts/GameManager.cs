@@ -66,32 +66,61 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         raycastManager = FindObjectOfType<ARRaycastManager>();
+        if (raycastManager == null)
+        {
+            Debug.LogError("ARRaycastManager not found in the scene!");
+        }
+
         planeManager = FindObjectOfType<ARPlaneManager>();
+        if (planeManager == null)
+        {
+            Debug.LogError("ARPlaneManager not found in the scene!");
+        }
+        else
+        {
+            planeManager.planesChanged += PlanesFound;
+        }
+
         slingShot = FindObjectOfType<SlingShot>();
-        
-        planeManager.planesChanged += PlanesFound;
+        if (slingShot == null)
+        {
+            Debug.LogError("SlingShot not found in the scene!");
+        }
+
         OnPlaneSelected += PlaneSelected;
-        
+
         // In Play Mode, simulate planes
-        #if UNITY_EDITOR
-                CreateMockPlanes();
-        #else
-                planeManager.planesChanged += PlanesFound;
-                OnPlaneSelected += PlaneSelected;
-        #endif
+#if UNITY_EDITOR
+        CreateMockPlanes();
+#else
+        if (planeManager != null)
+        {
+            planeManager.planesChanged += PlanesFound;
+        }
+        if (OnPlaneSelected != null)
+        {
+            OnPlaneSelected += PlaneSelected;
+        }
+#endif
     }
 
     // Update is called once per frame
     void Update()
     {
-        return; // Temporarily skip all code in Update
-        
+        // Check if in the Unity Editor
+#if UNITY_EDITOR
         if (Input.touchCount > 0 && selectedPlane == null && planeManager.trackables.count > 0)
         {
             SelectPlane();
         }
+#else
+    // Code for when not in Unity Editor (e.g., when on device)
+    if (Input.touchCount > 0 && selectedPlane == null && planeManager.trackables.count > 0)
+    {
+        SelectPlane();
+    }
+#endif
     }
     
     #if UNITY_EDITOR
@@ -186,6 +215,9 @@ public class GameManager : MonoBehaviour
 
     void PlaneSelected(ARPlane plane)
     {
+        // Hide the "Select Plane" canvas (assumes you have a reference to it)
+        selectPlaneCanvas.SetActive(false); // or selectPlaneCanvas.gameObject.SetActive(false);
+        
         foreach (KeyValuePair<int, GameObject> target in targets)
         {
             Destroy(target.Value);

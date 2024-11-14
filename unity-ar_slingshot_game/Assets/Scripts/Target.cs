@@ -15,8 +15,7 @@ public class Target : MonoBehaviour
     public event TargetDestroyedEventHandler OnTargetDestroy;
     void Start()
     {
-        damgeSound = GameObject.Find("SFX").transform.Find("Pikachu").GetComponent<AudioSource>();
-        damgeSound.playOnAwake = false;
+        
     }
     public void ReceiveDamage(int damage, Vector3 shootOrigin)
     {

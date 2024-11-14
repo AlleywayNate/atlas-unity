@@ -6,20 +6,8 @@
         "processId": 0,
         "exited": false
     },
-    "m_SelectedPriority": 1,
+    "m_SelectedPriority": 2,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "R3CRB0Y42CN",
-            "name": "com.DefaultCompany.unityar_slingshot_game",
-            "processId": 29110,
-            "exited": true
-        },
-        {
-            "deviceId": "R3CRB0Y42CN",
-            "name": "com.DefaultCompany.unityar_slingshot_game",
-            "processId": 771,
-            "exited": true
-        },
         {
             "deviceId": "R3CRB0Y42CN",
             "name": "com.DefaultCompany.unityar_slingshot_game",
@@ -48,7 +36,13 @@
             "deviceId": "R3CRB0Y42CN",
             "name": "com.google.android.youtube",
             "processId": 6886,
-            "exited": false
+            "exited": true
+        },
+        {
+            "deviceId": "R3CRB0Y42CN",
+            "name": "com.DefaultCompany.unityar_slingshot_game",
+            "processId": 15554,
+            "exited": true
         }
     ],
     "m_Tags": {
@@ -59,7 +53,7 @@
             },
             {
                 "m_Name": "No Filter",
-                "m_Selected": true
+                "m_Selected": false
             },
             {
                 "m_Name": "",
@@ -75,11 +69,11 @@
             },
             {
                 "m_Name": "Unity",
-                "m_Selected": false
+                "m_Selected": true
             },
             {
                 "m_Name": "CRASH",
-                "m_Selected": false
+                "m_Selected": true
             }
         ]
     },
