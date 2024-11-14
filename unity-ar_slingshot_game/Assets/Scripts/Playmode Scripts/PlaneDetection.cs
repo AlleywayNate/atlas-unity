@@ -1,14 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
-using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class PlaneDetection : MonoBehaviour
 {
+/*
     // public Game Objects
     [Header("Targets")]
     public GameObject targetPrefab;
@@ -20,7 +16,6 @@ public class GameManager : MonoBehaviour
     public GameObject selectPlaneCanvas;
     public GameObject startButton;
     public GameObject gameUI;
-    public Text scoreTxt;
     public GameObject ammoImagePrefab;
     public GameObject ammoImageGrid;
     public GameObject playAgainButton;
@@ -94,47 +89,40 @@ public class GameManager : MonoBehaviour
         }
     }
     
+    // Create mock planes for Editor testing
     #if UNITY_EDITOR
         void CreateMockPlanes()
         {
             if (selectedPlane == null)
             {
-                // Create a mock AR plane for testing in the Editor
+                // Create a mock AR plane when testing in the Editor
                 selectedPlane = new GameObject("Mock AR Plane").AddComponent<ARPlane>();
-                selectedPlane.gameObject.AddComponent<LineRenderer>();  // Optional, to improve mock plane appearance
+                selectedPlane.gameObject.AddComponent<LineRenderer>();  // Optional, add to mock plane appearance
                 selectedPlane.GetComponent<Renderer>().material = PlaneOcclusionMaterial;
 
-                // Mock the plane's position and rotation
+                // Mock the plane's position in front of the camera
                 selectedPlane.transform.position = new Vector3(0, 0, 2);
                 selectedPlane.transform.rotation = Quaternion.identity;
 
-                // Simulate plane selection immediately
+                // Trigger the plane selection event immediately
                 OnPlaneSelected?.Invoke(selectedPlane);
-
-                // Show the select plane canvas after mock plane is created
-                planeSearchingCanvas.SetActive(false);
-                selectPlaneCanvas.SetActive(true);
             }
         }
     #endif
     
     private void SelectPlane()
     {
-        Debug.Log("SelectPlane method called");
         Touch touch = Input.GetTouch(0);
-        Debug.Log("Touch phase: " + touch.phase);
+        
 
         if (touch.phase == TouchPhase.Began)
         {
-            Debug.Log("TouchBegan");
             if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
             {
-                Debug.Log("Raycast hit: " + hits.Count);
                 ARRaycastHit hit = hits[0];
                 selectedPlane =  planeManager.GetPlane(hit.trackableId);                
                 selectedPlane.GetComponent<LineRenderer>().positionCount = 0;
-                Debug.Log("Selected plane: " + selectedPlane);
-                
+
                 selectedPlane.GetComponent<Renderer>().material = PlaneOcclusionMaterial;
                 // SetMaterialTransparent(selectedPlane);
                 
@@ -171,14 +159,6 @@ public class GameManager : MonoBehaviour
         if (selectedPlane == null && planeManager.trackables.count > 0)
         {
             planeSearchingCanvas.SetActive(false);  // Hides searching canvas
-            if (planeSearchingCanvas != null)
-            {
-                planeSearchingCanvas.SetActive(false);  // Hides searching canvas
-            }
-            else
-            {
-                Debug.LogWarning("planeSearchingCanvas is not assigned.");
-            }
             selectPlaneCanvas.SetActive(true);     // Show the plane selection canvas
             planeManager.planesChanged -= PlanesFound;  // Unsubscribe to avoid further checks
         }
@@ -186,6 +166,7 @@ public class GameManager : MonoBehaviour
 
     void PlaneSelected(ARPlane plane)
     {
+        planeSelectedSound.Play();
         foreach (KeyValuePair<int, GameObject> target in targets)
         {
             Destroy(target.Value);
@@ -268,4 +249,5 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("ARSlingshotGame");
     }
+*/
 }
