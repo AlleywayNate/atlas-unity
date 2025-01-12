@@ -94,6 +94,7 @@ ExportedObj/
 *.user
 *.unityproj
 *.booproj
+*.obj
 
 # ============ #
 # OS generated #
