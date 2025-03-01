@@ -141,10 +141,7 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1
-  preloadedAssets:
-  - {fileID: 1523961395867100655, guid: a8955579f1ebb77458d0da44911f8be5, type: 2}
-  - {fileID: 11400000, guid: e38edacbc14cb2949a08902e097719d0, type: 2}
-  - {fileID: 11400000, guid: a4fc57b9146db6444bfad57a2414f202, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -165,6 +162,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.0x0Eunitywebxr
     iPhone: com.DefaultCompany.0x0E-unity-webxr
   buildNumber:
     Standalone: 0
